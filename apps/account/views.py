@@ -23,7 +23,7 @@ class RegistrationView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(
-                'Спасибо за регистрацию! Активируйте аккаунт',
+                'THank you for registration! Activate your account.',
                 status=status.HTTP_201_CREATED
             )
 
@@ -63,7 +63,7 @@ class ChangePasswordView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.set_new_password()
             return Response(
-                'Пароль успешно изменен.',
+                'Password was changed successfully. ',
                 status=status.HTTP_200_OK
             )
 
@@ -74,7 +74,7 @@ class RestorePasswordView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.send_code()
             return Response(
-                'Код был отправлен на вашу почту.',
+                'The code has been sent to your email.',
                 status=status.HTTP_200_OK
             )
 
@@ -85,7 +85,7 @@ class SetRestoredPasswordView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.set_new_password()
             return Response(
-                'Пароль успешно восстановлен.',
+                'Password was restored successfully.',
                 status=status.HTTP_200_OK
             )
 
@@ -97,6 +97,6 @@ class DeleteAccountView(APIView):
         username = request.user.username
         User.objects.get(username=username).delete()
         return Response(
-            'Ваш аккаунт удален.',
+            'Your account is deleted.',
             status=status.HTTP_204_NO_CONTENT
         )

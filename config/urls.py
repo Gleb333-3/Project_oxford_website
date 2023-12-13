@@ -23,5 +23,6 @@ urlpatterns = [
    path('admin/', admin.site.urls),
 
    path('api/account/', include('apps.account.urls')),
-   # path('api/news/', include('apps.news.urls')),
+   path('api/admissions/', include('apps.admissions.urls')),
+   path('api/news/', include('apps.news.urls')),
 ]
