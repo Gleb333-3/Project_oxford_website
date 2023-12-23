@@ -6,11 +6,9 @@ python-decouple
 
 
 wheel
-django-filter
 drf-yasg
 djangorestframework-simplejwt
 python-slugify
 
-django-cors-headers
 
 
